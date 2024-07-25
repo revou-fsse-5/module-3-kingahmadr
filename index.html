@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Recipe Finder</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Random Recipe Finder</h1>
+      <button id="getRecipeBtn">Get Random Recipe</button>
+      <div id="recipeContainer" class="recipe-container">
+        <!-- Recipe details will be displayed here -->
+        <article>
+          <h2 class="recipe-title"></h2>
+          <p class="recipe-instruction-title" style="display: none">
+            Here are the instructions:
+          </p>
+          <ol class="recipe-instructions"></ol>
+          <figure>
+            <img class="recipe-image" src="" alt="" style="display: none" />
+          </figure>
+          <button style="display: none" id="resetRecipeButton"></button>
+        </article>
+      </div>
+    </div>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
