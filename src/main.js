@@ -38,7 +38,14 @@ const renderTable = (recipeData) => {
   }
 };
 
+const splitInstructions = (recipeData) => {
+  let instructions = recipeData.meals[0][`strInstructions`];
+  const regex = /(\. [A-Z])/g;
+  const Array = instructions.split(regex);
+};
+
 const resetElement = () => {
+  const resetbutton = document.getElementById("resetButton");
   const tableBody = document.getElementById("table-body");
   const tableContainer = document.getElementById("myTable");
   const recipeButton = document.getElementById("getRecipeBtn");
@@ -49,14 +56,17 @@ const resetElement = () => {
   );
   const image = document.querySelector(".recipe-image");
 
-  tableBody.innerHTML = ""; // Clear all rows
-  title.innerHTML = ""; // Clear all rows
-  instructions.innerHTML = ""; // Clear all rows
-  recipeInstructionTitle.innerHTML = ""; // Clear all rows
-  image.innerHTML = ""; // Clear all rows
+  tableBody.innerHTML = "";
+  title.innerHTML = "";
+  instructions.innerHTML = "";
+  recipeInstructionTitle.innerHTML = "";
+  image.style = "display: none";
+  image.src = "";
+  image.alt = "";
 
   tableContainer.style.display = "none";
   recipeButton.style.display = "inline-block";
+  resetbutton.style.display = "none";
 };
 
 // Testing function
