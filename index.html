@@ -14,6 +14,17 @@
         <!-- Recipe details will be displayed here -->
         <article>
           <h2 class="recipe-title"></h2>
+          <table id="myTable" style="display: none;">
+            <thead>
+              <tr>
+                <th>Ingredients</td>
+                <th>Measures</td>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              
+            </tbody>
+          </table>
           <p class="recipe-instruction-title" style="display: none">
             Here are the instructions:
           </p>
@@ -24,8 +35,9 @@
           <button style="display: none" id="resetRecipeButton"></button>
         </article>
       </div>
+      <button id="resetButton" style="display: none;">Reset Recipe</button>
     </div>
-    <script type="module" src="/src/app.js"></script>
-    <!-- <script type="module" src="/src/main.js"></script> -->
+    <!-- <script type="module" src="/src/app.js"></script> -->
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
