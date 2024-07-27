@@ -39,9 +39,19 @@ const renderTable = (recipeData) => {
 };
 
 const splitInstructions = (recipeData) => {
-  let instructions = recipeData.meals[0][`strInstructions`];
-  const regex = /(\. [A-Z])/g;
-  const Array = instructions.split(regex);
+  let instructionData = recipeData.meals[0][`strInstructions`];
+  const regex = /(?<=\.)\s+(?=[A-Z])/g;
+  const instructionArray = instructionData.split(regex);
+  const instructionsList = document.querySelector(".recipe-instructions");
+
+  // Clear any existing instructions in the list
+  instructionsList.innerHTML = "";
+
+  instructionArray.forEach((instruction) => {
+    const li = document.createElement("li");
+    li.textContent = instruction.trim();
+    instructionsList.appendChild(li);
+  });
 };
 
 const resetElement = () => {
@@ -59,7 +69,7 @@ const resetElement = () => {
   tableBody.innerHTML = "";
   title.innerHTML = "";
   instructions.innerHTML = "";
-  recipeInstructionTitle.innerHTML = "";
+  recipeInstructionTitle.style.display = "none";
   image.style = "display: none";
   image.src = "";
   image.alt = "";
@@ -94,9 +104,9 @@ const showRecipeInfo = (recipeData) => {
 
 // Function when the random recipe button is clicked
 const onRandomRecipe = (recipeData) => {
-  const { strMeal, strInstructions, strMealThumb } = recipeData.meals[0];
+  const { strMeal, strMealThumb } = recipeData.meals[0];
   const title = document.querySelector(".recipe-title");
-  const instructions = document.querySelector(".recipe-instructions");
+  // const instructions = document.querySelector(".recipe-instructions");
   const recipeInstructionTitle = document.querySelector(
     ".recipe-instruction-title"
   );
@@ -105,7 +115,8 @@ const onRandomRecipe = (recipeData) => {
   const resetButton = document.getElementById("resetButton");
 
   title.textContent = strMeal;
-  instructions.textContent = strInstructions;
+  // instructions.textContent = strInstructions;
+  splitInstructions(recipeData);
   image.style = "display: block";
   image.src = strMealThumb;
   image.alt = "Recipe Image";

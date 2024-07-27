@@ -48,6 +48,8 @@ button:hover {
 
 .recipe-instructions {
   margin-top: 10px;
+  overflow: auto;
+  height: 20rem;
 }
 
 .recipe-image {
@@ -58,8 +60,39 @@ button:hover {
   height: 50%;
 }
 
+.recipe-instruction-title {
+  margin: 0;
+}
+
 table,
 th,
 td {
   border: 2px solid black;
+}
+
+table {
+  border: 1px solid #dededf;
+  height: auto;
+  width: 80%;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: left;
+}
+
+#myTable {
+  align-self: flex-start;
+}
+
+.flex-container {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
+figure {
+  margin-right: 0;
+  margin-left: 0;
 }
