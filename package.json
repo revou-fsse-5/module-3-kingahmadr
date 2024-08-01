@@ -2,6 +2,8 @@
   "name": "random-recipe-finder",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
+  "main": "./src/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,5 +14,12 @@
     "eslint": "^7.2.0",
     "babel-eslint": "^10.1.0"
   },
-  "keywords": ["css", "javascript"]
+  "keywords": [
+    "css",
+    "javascript",
+    "recipes"
+  ],
+  "description": "A random recipe finder application",
+  "author": "Ahmad Naufal",
+  "license": "MIT"
 }
