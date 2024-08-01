@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Recipe Finder</title>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    /> -->
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -15,6 +23,9 @@
         <article>
           <h2 class="recipe-title"></h2>
           <div class="flex-container">
+            <figure>
+              <img class="recipe-image" src="" alt="" style="display: none" />
+            </figure>
             <table id="myTable" style="display: none;">
               <thead>
                 <tr>
@@ -26,24 +37,24 @@
                 
               </tbody>
             </table>
-            <div>
-              <p class="recipe-instruction-title" style="display: none">
-                Here are the instructions:
-              </p>
-              <ol class="recipe-instructions"></ol>
-            </div>
-           
           </div>
-          
-          <figure>
-            <img class="recipe-image" src="" alt="" style="display: none" />
-          </figure>
+          <div>
+            <p class="recipe-instruction-title" style="display: none">
+              Here are the instructions:
+            </p>
+            <ol class="recipe-instructions">
+              
+            </ol>
+          </div>
           <button style="display: none" id="resetRecipeButton"></button>
         </article>
       </div>
       <button id="resetButton" style="display: none;">Reset Recipe</button>
     </div>
     <!-- <script type="module" src="/src/app.js"></script> -->
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

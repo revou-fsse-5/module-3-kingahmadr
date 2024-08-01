@@ -2,12 +2,16 @@ const RANDOM_RECIPE_URL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
 // fetch data function
 const fetchData = async (url) => {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log("Error fetching data: ", error);
   }
-  const data = await response.json();
-  return data;
 };
 
 const renderTable = (recipeData) => {
@@ -101,6 +105,7 @@ const showRecipeInfo = (recipeData) => {
     }
   }
 };
+// End of testing function
 
 // Function when the random recipe button is clicked
 const onRandomRecipe = (recipeData) => {
@@ -128,14 +133,14 @@ const onRandomRecipe = (recipeData) => {
   resetButton.style.display = "block";
 };
 
-// Function to run the promise of fetched data
-const displayFetchedData = () =>
-  fetchData(RANDOM_RECIPE_URL)
-    .then((data) => {
-      onRandomRecipe(data);
-      // renderTable(data);
-    })
-    .catch((error) => console.error("Error fetching recipe:", error));
+const displayFetchedData = async () => {
+  try {
+    const data = await fetchData(RANDOM_RECIPE_URL);
+    onRandomRecipe(data);
+  } catch (error) {
+    console.error("Error fetching recipe:", error);
+  }
+};
 
 const button = document.getElementById("getRecipeBtn");
 button.addEventListener("click", displayFetchedData);
