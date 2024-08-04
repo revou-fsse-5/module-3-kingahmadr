@@ -1,3 +1,4 @@
+import fetchData, { clearData } from "./fetchData";
 const resetElement = () => {
   const resetbutton = document.getElementById("resetButton");
   const tableBody = document.getElementById("table-body");
@@ -21,5 +22,7 @@ const resetElement = () => {
   tableContainer.style.display = "none";
   recipeButton.style.display = "inline-block";
   resetbutton.style.display = "none";
+
+  clearData();
 };
 export default resetElement;
