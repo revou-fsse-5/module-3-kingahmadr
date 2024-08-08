@@ -11,15 +11,15 @@ const renderTable = (recipeData: RecipeDataModel): RecipeDataModel => {
 
   // Loop through the data to create table rows
   for (let i: number = 1; i <= 20; i++) {
-    const ingredient = recipeData.meals[0][`strIngredient${i}`];
-    const measurement = recipeData.meals[0][`strMeasure${i}`];
+    const ingredient: string | null = recipeData.meals[0][`strIngredient${i}`];
+    const measurement: string | null = recipeData.meals[0][`strMeasure${i}`];
 
     if (ingredient) {
       const row = document.createElement("tr") as HTMLTableRowElement;
-      const ingredientCell = document.createElement(
+      const ingredientCell: HTMLTableCellElement = document.createElement(
         "td"
       ) as HTMLTableCellElement;
-      const measurementCell = document.createElement(
+      const measurementCell: HTMLTableCellElement = document.createElement(
         "td"
       ) as HTMLTableCellElement;
 

@@ -4,9 +4,9 @@ const splitInstructions = (recipeData: RecipeDataModel): RecipeDataModel => {
   let instructionData: string = recipeData.meals[0][`strInstructions`];
   const regex: RegExp = /(?<=\.)\s+(?=[A-Z])/g;
   const instructionArray: string[] = instructionData.split(regex);
-  const instructionsList = document.querySelector(
+  const instructionsList: HTMLElement = document.querySelector(
     ".recipe-instructions"
-  ) as HTMLElement | null;
+  ) as HTMLElement;
 
   // Clear any existing instructions in the list
   if (instructionsList) {

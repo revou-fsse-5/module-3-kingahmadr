@@ -1,21 +1,29 @@
 import { clearData } from "./fetchData";
-const resetElement = () => {
-  const resetbutton = document.getElementById(
+const resetElement = (): void => {
+  const resetbutton: HTMLButtonElement = document.getElementById(
     "resetButton"
   ) as HTMLButtonElement;
-  const tableBody = document.getElementById("table-body") as HTMLElement;
-  const tableContainer = document.getElementById("myTable") as HTMLTableElement;
-  const recipeButton = document.getElementById(
+  const tableBody: HTMLElement = document.getElementById(
+    "table-body"
+  ) as HTMLElement;
+  const tableContainer: HTMLTableElement = document.getElementById(
+    "myTable"
+  ) as HTMLTableElement;
+  const recipeButton: HTMLButtonElement = document.getElementById(
     "getRecipeBtn"
   ) as HTMLButtonElement;
-  const title = document.querySelector(".recipe-title") as HTMLElement;
-  const instructions = document.querySelector(
+  const title: HTMLElement = document.querySelector(
+    ".recipe-title"
+  ) as HTMLElement;
+  const instructions: HTMLElement = document.querySelector(
     ".recipe-instructions"
   ) as HTMLElement;
-  const recipeInstructionTitle = document.querySelector(
+  const recipeInstructionTitle: HTMLElement = document.querySelector(
     ".recipe-instruction-title"
   ) as HTMLElement;
-  const image = document.querySelector(".recipe-image") as HTMLImageElement;
+  const image: HTMLImageElement = document.querySelector(
+    ".recipe-image"
+  ) as HTMLImageElement;
 
   tableBody.innerHTML = "";
   title.innerHTML = "";

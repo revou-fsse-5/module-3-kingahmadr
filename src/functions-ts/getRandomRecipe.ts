@@ -5,17 +5,21 @@ import { RecipeDataModel } from "./recipeDataModel";
 const getRandomRecipe = (recipeData: RecipeDataModel): RecipeDataModel => {
   if (recipeData) {
     const { strMeal, strMealThumb } = recipeData.meals[0];
-    const title = document.querySelector(".recipe-title") as HTMLElement;
+    const title: HTMLElement = document.querySelector(
+      ".recipe-title"
+    ) as HTMLElement;
 
     // const instructions = document.querySelector(".recipe-instructions");
-    const recipeInstructionTitle = document.querySelector(
+    const recipeInstructionTitle: HTMLElement = document.querySelector(
       ".recipe-instruction-title"
     ) as HTMLElement;
     const recipeButton = document.getElementById(
       "getRecipeBtn"
     ) as HTMLButtonElement;
-    const image = document.querySelector(".recipe-image") as HTMLImageElement;
-    const resetButton = document.getElementById(
+    const image: HTMLImageElement = document.querySelector(
+      ".recipe-image"
+    ) as HTMLImageElement;
+    const resetButton: HTMLButtonElement = document.getElementById(
       "resetButton"
     ) as HTMLButtonElement;
 
