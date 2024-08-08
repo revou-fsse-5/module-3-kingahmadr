@@ -1,7 +1,7 @@
 // fetch data function
 import { RecipeDataModel } from "./recipeDataModel";
 
-let storedData: null | RecipeDataModel | [] | string | {};
+let storedData: RecipeDataModel | null;
 
 const fetchData = async (url: string): Promise<RecipeDataModel> => {
   try {
@@ -12,11 +12,11 @@ const fetchData = async (url: string): Promise<RecipeDataModel> => {
     const data: RecipeDataModel = await response.json();
     storedData = data;
     console.log(storedData);
-    // console.log(storedData);
-    if (data.meals.length === 0) {
+
+    if (storedData.meals.length === 0) {
       throw new Error("No meals found");
     }
-    return data;
+    return storedData;
   } catch (error) {
     console.log("Error fetching data: ", error);
     throw error;
@@ -25,7 +25,5 @@ const fetchData = async (url: string): Promise<RecipeDataModel> => {
 const clearData = (): void => {
   storedData = null;
   console.log(storedData);
-
-  // console.log(storedData);
 };
 export { fetchData, clearData };
