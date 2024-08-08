@@ -5,6 +5,7 @@ import { RecipeDataModel } from "./recipeDataModel";
 const getRandomRecipe = (recipeData: RecipeDataModel): RecipeDataModel => {
   if (recipeData) {
     const { strMeal, strMealThumb } = recipeData.meals[0];
+
     const title: HTMLElement = document.querySelector(
       ".recipe-title"
     ) as HTMLElement;
@@ -25,7 +26,6 @@ const getRandomRecipe = (recipeData: RecipeDataModel): RecipeDataModel => {
 
     title.textContent = strMeal;
 
-    // instructions.textContent = strInstructions;
     splitInstructions(recipeData);
 
     image.style.display = "block";

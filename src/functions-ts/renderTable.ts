@@ -1,6 +1,6 @@
-import { RecipeDataModel } from "./recipeDataModel";
+import { RecipeDataModel, RecipeModel } from "./recipeDataModel";
 
-const renderTable = (recipeData: RecipeDataModel): RecipeDataModel => {
+const renderTable = (recipeData: RecipeDataModel): void => {
   const tableBody = document.getElementById("table-body") as HTMLTableElement;
   const tableContainer = document.getElementById("myTable") as HTMLTableElement;
 
@@ -11,8 +11,10 @@ const renderTable = (recipeData: RecipeDataModel): RecipeDataModel => {
 
   // Loop through the data to create table rows
   for (let i: number = 1; i <= 20; i++) {
-    const ingredient: string | null = recipeData.meals[0][`strIngredient${i}`];
-    const measurement: string | null = recipeData.meals[0][`strMeasure${i}`];
+    const ingredient: string | null =
+      recipeData.meals[0][`strIngredient${i}` as keyof RecipeModel];
+    const measurement: string | null =
+      recipeData.meals[0][`strMeasure${i}` as keyof RecipeModel];
 
     if (ingredient) {
       const row = document.createElement("tr") as HTMLTableRowElement;
@@ -35,6 +37,6 @@ const renderTable = (recipeData: RecipeDataModel): RecipeDataModel => {
       tableBody.appendChild(row);
     }
   }
-  return recipeData;
+  // return recipeData;
 };
 export default renderTable;
