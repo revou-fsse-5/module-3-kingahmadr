@@ -1,6 +1,6 @@
-import onRandomRecipe from "./functions/onRandomRecipe";
-import resetElement from "./functions/resetElements";
-import fetchData from "./functions/fetchData";
+import onRandomRecipe from "./functions-js/onRandomRecipe";
+import resetElement from "./functions-js/resetElements";
+import fetchData from "./functions-js/fetchData";
 
 const RANDOM_RECIPE_URL = "https://www.themealdb.com/api/json/v1/1/random.php";
 const displayFetchedData = async () => {

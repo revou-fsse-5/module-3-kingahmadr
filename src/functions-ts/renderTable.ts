@@ -10,7 +10,7 @@ const renderTable = (recipeData: RecipeDataModel): RecipeDataModel => {
   tableContainer.style.display = "table";
 
   // Loop through the data to create table rows
-  for (let i = 1; i <= 20; i++) {
+  for (let i: number = 1; i <= 20; i++) {
     const ingredient = recipeData.meals[0][`strIngredient${i}`];
     const measurement = recipeData.meals[0][`strMeasure${i}`];
 
@@ -23,7 +23,10 @@ const renderTable = (recipeData: RecipeDataModel): RecipeDataModel => {
         "td"
       ) as HTMLTableCellElement;
 
-      if (ingredient && measurement !== undefined) {
+      if (
+        (ingredient && measurement !== undefined) ||
+        (ingredient && measurement !== null)
+      ) {
         ingredientCell.textContent = ingredient;
         measurementCell.textContent = measurement;
       }

@@ -1,4 +1,4 @@
-import { RecipeDataModel } from "./recipeDataModel";
+import { RecipeDataModel, RecipeModel } from "./recipeDataModel";
 
 const splitInstructions = (recipeData: RecipeDataModel): RecipeDataModel => {
   let instructionData: string = recipeData.meals[0][`strInstructions`];

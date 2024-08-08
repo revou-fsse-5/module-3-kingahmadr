@@ -9,20 +9,23 @@ const fetchData = async (url: string): Promise<RecipeDataModel> => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const data: { meals: RecipeDataModel[] } = await response.json();
+    const data: RecipeDataModel = await response.json();
     storedData = data;
     console.log(storedData);
+    // console.log(storedData);
     if (data.meals.length === 0) {
       throw new Error("No meals found");
     }
-    return data.meals[0];
+    return data;
   } catch (error) {
     console.log("Error fetching data: ", error);
     throw error;
   }
 };
-const clearData = () => {
+const clearData = (): void => {
   storedData = null;
+  console.log(storedData);
+
   // console.log(storedData);
 };
 export { fetchData, clearData };
