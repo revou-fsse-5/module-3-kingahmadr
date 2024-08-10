@@ -18,8 +18,6 @@ const splitInstructions = (recipeData: RecipeDataModel): void => {
       instructionsList.appendChild(li);
     });
   }
-
-  // return recipeData;
 };
 
 export default splitInstructions;

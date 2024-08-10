@@ -8,7 +8,6 @@ const getRandomRecipe = (recipeData: RecipeDataModel): void => {
       ".recipe-title"
     ) as HTMLElement;
 
-    // const instructions = document.querySelector(".recipe-instructions");
     const recipeInstructionTitle: HTMLElement = document.querySelector(
       ".recipe-instruction-title"
     ) as HTMLElement;
@@ -34,6 +33,5 @@ const getRandomRecipe = (recipeData: RecipeDataModel): void => {
   } else {
     console.error("No meals found in the recipe data.");
   }
-  // return recipeData;
 };
 export default getRandomRecipe;

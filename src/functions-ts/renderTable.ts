@@ -37,6 +37,5 @@ const renderTable = (recipeData: RecipeDataModel): void => {
       tableBody.appendChild(row);
     }
   }
-  // return recipeData;
 };
 export default renderTable;
