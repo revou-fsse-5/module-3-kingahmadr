@@ -7,8 +7,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "./dist",
-    "types": ["jest"]
+    "outDir": "./dist"
+    // "types": ["jest"]
   },
   "include": ["src/**/*.ts", "main.ts"],
   "exclude": ["node_modules", "dist"]
