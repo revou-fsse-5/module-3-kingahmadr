@@ -1,6 +1,6 @@
-import { RecipeDataModel, RecipeModel } from "./recipeDataModel";
+import { RecipeDataModel } from "./recipeDataModel";
 
-const splitInstructions = (recipeData: RecipeDataModel): RecipeDataModel => {
+const splitInstructions = (recipeData: RecipeDataModel): void => {
   let instructionData: string = recipeData.meals[0][`strInstructions`];
   const regex: RegExp = /(?<=\.)\s+(?=[A-Z])/g;
   const instructionArray: string[] = instructionData.split(regex);
@@ -19,7 +19,7 @@ const splitInstructions = (recipeData: RecipeDataModel): RecipeDataModel => {
     });
   }
 
-  return recipeData;
+  // return recipeData;
 };
 
 export default splitInstructions;

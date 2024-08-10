@@ -1,8 +1,6 @@
-import splitInstructions from "./splitInstructions";
-import renderTable from "./renderTable";
 import { RecipeDataModel } from "./recipeDataModel";
 
-const getRandomRecipe = (recipeData: RecipeDataModel): RecipeDataModel => {
+const getRandomRecipe = (recipeData: RecipeDataModel): void => {
   if (recipeData) {
     const { strMeal, strMealThumb } = recipeData.meals[0];
 
@@ -26,20 +24,16 @@ const getRandomRecipe = (recipeData: RecipeDataModel): RecipeDataModel => {
 
     title.textContent = strMeal;
 
-    splitInstructions(recipeData);
-
     image.style.display = "block";
     image.src = strMealThumb;
     image.alt = "Recipe Image";
 
-    renderTable(recipeData);
     recipeInstructionTitle.style.display = "block";
     recipeButton.style.display = "none";
     resetButton.style.display = "block";
   } else {
     console.error("No meals found in the recipe data.");
   }
-
-  return recipeData;
+  // return recipeData;
 };
 export default getRandomRecipe;
